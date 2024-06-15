@@ -130,7 +130,7 @@ var high_score = DataManager.get_data("high_score")
 print(high_score)  # Output: 42
  ```
 
-Updating the High Score:
+### Updating the High Score:
  ```gdscript
 func update_high_score(new_score):
     var current_high_score = DataManager.get_data("high_score")
