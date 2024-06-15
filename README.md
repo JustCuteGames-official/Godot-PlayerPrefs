@@ -111,5 +111,12 @@ This script acts as a global data manager, enabling the storage, retrieval, and 
     func _ready():
         load_data()
     ```
-
+    
+### Adding DataManager as a Singleton
+Open the Project Settings:
+#Go to Project > Project Settings... > AutoLoad.
+Add DataManager.gd:
+Add the DataManager.gd script file.
+Set the Node Name to DataManager.
+This setup ensures that DataManager is loaded automatically when the project starts, making its functions accessible from any script without needing to create instances manually.
 
