@@ -1,3 +1,6 @@
+# Godot-PlayerPrefs
+This program is designed to manage persistent data storage for a Godot 4.2 game, similar to the PlayerPrefs system in Unity. It leverages the FileAccess class to read and write data to a configuration file located in the user directory. This ensures that data is saved across sessions and can be accessed globally from any script within the project.
+
 # DataManager.gd
 
 This script acts as a global data manager, enabling the storage, retrieval, and manipulation of game data. It is configured to be a Singleton (autoload) in Godot, allowing global access.
@@ -119,19 +122,23 @@ Once the `DataManager` is set up as an autoload singleton, you can easily access
 ### Setting a Data Value:
 ```gdscript
 DataManager.set_data("high_score", 42)
-Getting a Data Value:
-gdscript
-Code kopieren
+ ```
+
+### Getting a Data Value:
+```gdscript
 var high_score = DataManager.get_data("high_score")
 print(high_score)  # Output: 42
+ ```
+
 Updating the High Score:
-gdscript
-Code kopieren
+ ```gdscript
 func update_high_score(new_score):
     var current_high_score = DataManager.get_data("high_score")
     if new_score > current_high_score:
         DataManager.set_data("high_score", new_score)
-Adding DataManager as a Singleton
+ ```
+
+### Adding DataManager as a Singleton
 Open the Project Settings:
 Go to Project > Project Settings... > AutoLoad.
 Add DataManager.gd:
@@ -139,5 +146,5 @@ Add the DataManager.gd script file.
 Set the Node Name to DataManager.
 This setup ensures that DataManager is loaded automatically when the project starts, making its functions accessible from any script without needing to create instances manually.
 
-Debugging
+### Debugging
 The script includes print statements to help with debugging. These statements provide feedback in the console regarding the status of data saving and loading operations. If the file is not being created or data is not being loaded, the print statements can help identify where the process is failing.
